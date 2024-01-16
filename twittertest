@@ -1,0 +1,19 @@
+
+const request = require('supertest');
+const app = require('./app'); // assuming your Express app is in app.js
+
+describe('GET /tweets', () => {
+    it('responds with json', async () => {
+        const res = await request(app)
+            .get('/tweets')
+            .expect('Content-Type', /json/)
+            .expect(200);
+        // Here you can add more assertions based on your needs
+    });
+});
+
+// scripts section should be outside the code block
+// Add a semicolon at the end of each line
+const scripts = {
+    "test": "jest"
+};
